@@ -16,7 +16,7 @@ import { User } from './users/entities/user.entity';
       isGlobal : true,
       envFilePath : process.env.NODE_ENV === "dev" ? ".dev.env" : ".test.env",
       ignoreEnvFile : process.env.NODE_ENV === 'prod',
-    }) , 
+    }), 
     TypeOrmModule.forRoot({
       type : 'postgres',
       host :  'localhost', //process.env.DB_HOST,
