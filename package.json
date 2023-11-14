@@ -4,7 +4,10 @@
   "description": "",
   "author": "",
   "license": "UNLICENSED",
-  "private" :true,
+  "private": true,
+  "workspaces": [
+    "Client/"
+  ],
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
