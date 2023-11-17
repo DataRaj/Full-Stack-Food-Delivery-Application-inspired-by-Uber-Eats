@@ -1,5 +1,5 @@
 import { Field, InputType, ObjectType, registerEnumType } from "@nestjs/graphql";
-import * as bcrypt from "bcrypt" 
+import * as bcrypt from "bcryptjs" 
 import { BeforeInsert, Column, Entity } from "typeorm";
 import { UserRole } from "../enums/userRole.enum";
 import { CoreEntity } from "src/common/entities/core.entity";
