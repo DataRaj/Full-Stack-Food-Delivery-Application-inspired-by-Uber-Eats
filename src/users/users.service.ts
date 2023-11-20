@@ -7,6 +7,7 @@ import { LoginInput } from "./dto/login.dto";
 import * as jwt from 'jsonwebtoken'
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "src/jwt/jwt.service";
+import { UserProfileOutput } from "./dto/user-profile.dto";
 @Injectable()
 export class UserService{
     constructor(@InjectRepository(User) private readonly users: Repository<User>,
@@ -33,7 +34,8 @@ export class UserService{
     async login({
         email,
         password,
-    }:LoginInput): Promise<{ok : boolean; error?: string; token?: string}>{
+    }:LoginInput): 
+    Promise<{ok : boolean; error?: string; token?: string}>{
         // find user with the email
         // verify the password with email
         // make a JWT and give it to the user
@@ -68,4 +70,16 @@ export class UserService{
             }
         }
     }
+    async findById(id: number): Promise<UserProfileOutput> {
+        try {
+          const user = await this.users.findOneOrFail({ id });
+          return {
+            ok: true,
+            user,
+          };
+        } catch (error) {
+          return { ok: false, error: '[App] User Not Found' };
+        }
+      }
+
 }

@@ -4,6 +4,9 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { UserService } from "./users.service";
 import { CreateAccountOutput, createAccountInput } from "./dto/create-account.dto";
 import { LoginInput, LoginOutput } from "./dto/login.dto";
+import { UseGuards } from "@nestjs/common";
+import { AuthGuard } from "src/auth/auth.guard";
+import { AuthUser } from "src/auth/auth-user.decorator";
 // import { Query } from "@nestjs/common";
 
 @Resolver(of => User)
@@ -44,4 +47,9 @@ export class UsersResolver{
 
         }
     }
+}
+@Query(returns => User)
+@UseGuards(AuthGuard)
+me(@AuthUser() authUser : User){
+    authUser
 }
