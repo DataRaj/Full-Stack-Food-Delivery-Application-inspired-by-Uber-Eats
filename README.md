@@ -70,3 +70,4 @@ Our application is a full-stack solution that caters to the entire food delivery
 ## progress till now
 - written whole backend code with end to end testing and releasing email testing thoroughly.
 - added mailgun setup for the application as well
+![image](https://github.com/DataRaj/Full-Stack-Food-Delivery-Application-inspired-by-Uber-Eats/assets/87413639/3c3857e2-1004-4d5d-865f-bb32798dc124) completed and added E2E testing (end to end testing)
