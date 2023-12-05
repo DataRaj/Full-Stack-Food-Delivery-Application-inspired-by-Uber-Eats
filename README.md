@@ -65,3 +65,8 @@ Our application is a full-stack solution that caters to the entire food delivery
 - 📊 GraphQL for flexible and efficient API endpoints.
 - 🧪 Comprehensive testing with Jest to ensure a reliable application.
 - 👀 Different views for clients, servers, and moderators for a tailored experience.
+
+
+## progress till now
+- written whole backend code with end to end testing and releasing email testing thoroughly.
+- added mailgun setup for the application as well
